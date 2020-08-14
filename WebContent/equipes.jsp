@@ -49,6 +49,8 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#regras">Regras</a>
 				</li>
+				<li class="nav-item"><a class="nav-link" href="equipessegundodia.jsp">2ª dia de votação</a>
+				</li>
 			</ul>
 		</div>
 	</div>
