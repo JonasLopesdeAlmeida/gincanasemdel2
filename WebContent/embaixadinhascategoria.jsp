@@ -16,7 +16,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Gincana Virtual Movimento e Resgate</title>
-<link rel="icon" href="imgs/favicon.ico">
+<link rel="icon" href="imgs/logo-pref.png">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 	type="text/css">
@@ -29,8 +29,8 @@
 <body id="topo" class="slowpage">
 	<nav class="navbar navbar-expand-md navbar-light">
 	<div class="container">
-		<a class="navbar-brand text-primary" href="index.html"> <img
-			src="imgs/logo.png" width="190" class="d-inline-block align-top"
+		<a class="navbar-brand text-primary" href="index.jsp"> <img
+			src="imgs/logo-pref.png" width="190" class="d-inline-block align-top"
 			alt=""></a>
 		<button class="navbar-toggler navbar-toggler-right border-0"
 			type="button" data-toggle="collapse" data-target="#navbar4">
@@ -39,6 +39,8 @@
 		<div class="collapse navbar-collapse" id="navbar4">
 			<ul
 				class="navbar-nav ml-auto text-uppercase font-weight-bold negrita fonte_menu">
+				<li class="nav-item"><a class="nav-link" href="index.jsp">HOME</a>
+				</li>
 				<li class="nav-item"><a class="nav-link" href="#videos">vídeos</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#regras">Regras</a>
@@ -85,13 +87,11 @@
 										alt="Imagem de capa do card">
 									<div class="card-body text-center">
 										<h5 class="card-title">Equipe: Bacanga</h5>
-										<input class="form-check-input" type="radio"
-											name="masc_bacanga" value="BACANGA" required="required">
-										<button href="" class="btn btn-dark btn-sm" type="submit"
+										<i href="" class="btn btn-dark btn-sm"
 											data-toggle="modal" data-target="#videoModal"
 											data-video="https://www.youtube.com/embed/dVXm0q9Fcm8">
 											<i class="fa fa-fw fa-play"></i>&nbsp;Assistir
-										</button>
+										</i>
 
 									</div>
 									<div class="card-footer">
@@ -160,18 +160,28 @@
 											</div>
 											<div class="modal-body bg-dark p-0">
 												<div class="embed-responsive embed-responsive-16by9">
-													<!--<iframe class="embed-responsive-item" allowfullscreen></iframe>-->
+													<iframe class="embed-responsive-item" allowfullscreen></iframe>
 													<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
 														frameborder="0" allowfullscreen></iframe>
 												</div>
 											</div>
 											<div class="modal-footer">
-												<button id="botaoCurtir" type="submit"
-													class="btn btn-primary btn-lg">
-													<i class="fa fa-thumbs-up"></i>&nbsp;Curtir
-												</button>
+											 
+											 <div> 
+											 	<input class="form-check-input" type="radio"
+											name="masc_bacanga" value="BACANGA" required="required">
+											 </div>
+											
+												<button  type="submit"
+									                    class="btn btn-primary btn-lg">
+									                    <i class="fa fa-thumbs-up"></i>&nbsp;Curtir
+								                </button>
+												
+											
 												<button type="button" class="btn btn-secondary"
 													data-dismiss="modal" onclick='atualiza();'>Fechar</button>
+													
+													
 											</div>
 										</div>
 									</div>

@@ -7,7 +7,7 @@ public class VotacaoTerceiroDia  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id_votacao_3;
-	private String grupog_1,grupog_2, grupoh_1,grupoh_2, grupoi_1,grupoi_2 ,data_votacao_3_dia;
+	private String grupog_1,grupog_2, grupoh_1,grupoh_2, grupoi_1,grupoi_2 ,data_votacao_3_dia, ip_votacao_3_dia;
 	
 	//, grupod, grupoe, grupof, grupog, grupoh, grupoi,
 
@@ -17,7 +17,7 @@ public class VotacaoTerceiroDia  implements Serializable {
 	}
 
 	public VotacaoTerceiroDia(int id_votacao_3, String grupog_1, String grupog_2, String grupoh_1, String grupoh_2,
-			String grupoi_1, String grupoi_2, String data_votacao_3_dia) {
+			String grupoi_1, String grupoi_2, String data_votacao_3_dia, String ip_votacao_3_dia) {
 		super();
 		this.id_votacao_3 = id_votacao_3;
 		this.grupog_1 = grupog_1;
@@ -27,6 +27,7 @@ public class VotacaoTerceiroDia  implements Serializable {
 		this.grupoi_1 = grupoi_1;
 		this.grupoi_2 = grupoi_2;
 		this.data_votacao_3_dia = data_votacao_3_dia;
+		this.ip_votacao_3_dia = ip_votacao_3_dia;
 	}
 
 	public int getId_votacao_3() {
@@ -91,6 +92,14 @@ public class VotacaoTerceiroDia  implements Serializable {
 
 	public void setData_votacao_3_dia(String data_votacao_3_dia) {
 		this.data_votacao_3_dia = data_votacao_3_dia;
+	}
+
+	public String getIp_votacao_3_dia() {
+		return ip_votacao_3_dia;
+	}
+
+	public void setIp_votacao_3_dia(String ip_votacao_3_dia) {
+		this.ip_votacao_3_dia = ip_votacao_3_dia;
 	}
 	
 	

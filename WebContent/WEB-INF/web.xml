@@ -101,13 +101,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServidorVotacaoNonoDia</display-name>
-    <servlet-name>ServidorVotacaoNonoDia</servlet-name>
-    <servlet-class>servidor.ServidorVotacaoNonoDia</servlet-class>
+    <display-name>ServerVotacaoNonoDia</display-name>
+    <servlet-name>ServerVotacaoNonoDia</servlet-name>
+    <servlet-class>servidor.ServerVotacaoNonoDia</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServidorVotacaoNonoDia</servlet-name>
-    <url-pattern>/ServidorVotacaoNonoDia</url-pattern>
+    <servlet-name>ServerVotacaoNonoDia</servlet-name>
+    <url-pattern>/ServerVotacaoNonoDia</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -121,12 +121,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ServidorVotacaoDecimoPrimeiroDia</display-name>
-    <servlet-name>ServidorVotacaoDecimoPrimeiroDia</servlet-name>
-    <servlet-class>servidor.ServidorVotacaoDecimoPrimeiroDia</servlet-class>
+    <display-name>ServerVotacaoDecimoPrimeiroDia</display-name>
+    <servlet-name>ServerVotacaoDecimoPrimeiroDia</servlet-name>
+    <servlet-class>servidor.ServerVotacaoDecimoPrimeiroDia</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServidorVotacaoDecimoPrimeiroDia</servlet-name>
-    <url-pattern>/ServidorVotacaoDecimoPrimeiroDia</url-pattern>
+    <servlet-name>ServerVotacaoDecimoPrimeiroDia</servlet-name>
+    <url-pattern>/ServerVotacaoDecimoPrimeiroDia</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -7,7 +7,7 @@ public class VotacaoDecimoDia  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id_votacao_10;
-	private String grupoa_1,grupoa_2, grupob_1,grupob_2, data_votacao_10_dia;
+	private String grupoa_1,grupoa_2, grupob_1,grupob_2, data_votacao_10_dia, ip_votacao_10_dia;
 	
 	//, grupod, grupoe, grupof, grupog, grupoh, grupoi,
 
@@ -16,7 +16,7 @@ public class VotacaoDecimoDia  implements Serializable {
 
 	}
 
-	public VotacaoDecimoDia(int id_votacao_10, String grupoa_1, String grupoa_2, String grupob_1, String grupob_2, String data_votacao_10_dia) {
+	public VotacaoDecimoDia(int id_votacao_10, String grupoa_1, String grupoa_2, String grupob_1, String grupob_2, String data_votacao_10_dia, String ip_votacao_10_dia) {
 		super();
 		this.id_votacao_10 = id_votacao_10;
 		this.grupoa_1 = grupoa_1;
@@ -74,7 +74,15 @@ public class VotacaoDecimoDia  implements Serializable {
 		this.data_votacao_10_dia = data_votacao_10_dia;
 	}
 
+	public String getIp_votacao_10_dia() {
+		return ip_votacao_10_dia;
+	}
 
+	public void setIp_votacao_10_dia(String ip_votacao_10_dia) {
+		this.ip_votacao_10_dia = ip_votacao_10_dia;
+	}
+
+    
 
 
 }

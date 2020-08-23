@@ -7,7 +7,7 @@ public class VotacaoQuintoDia  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id_votacao_5;
-	private String grupod_1,grupod_2, grupoe_1,grupoe_2, grupof_1,grupof_2 ,data_votacao_5_dia;
+	private String grupod_1,grupod_2, grupoe_1,grupoe_2, grupof_1,grupof_2 ,data_votacao_5_dia, ip_votacao_5_dia;
 	
 	//, grupod, grupoe, grupof, grupog, grupoh, grupoi,
 
@@ -17,7 +17,7 @@ public class VotacaoQuintoDia  implements Serializable {
 	}
 
 	public VotacaoQuintoDia(int id_votacao_5, String grupod_1, String grupod_2, String grupoe_1, String grupoe_2, String grupof_1,
-			String grupof_2, String data_votacao_5_dia) {
+			String grupof_2, String data_votacao_5_dia, String ip_votacao_5_dia) {
 		super();
 		this.id_votacao_5 = id_votacao_5;
 		this.grupod_1 = grupod_1;
@@ -27,16 +27,26 @@ public class VotacaoQuintoDia  implements Serializable {
 		this.grupof_1 = grupof_1;
 		this.grupof_2 = grupof_2;
 		this.data_votacao_5_dia = data_votacao_5_dia;
+		this.ip_votacao_5_dia = ip_votacao_5_dia;
 	}
 
 	public int getId_votacao_5() {
 		return id_votacao_5;
 	}
 
-	public void setId_votacao_2(int id_votacao_5) {
+	public void setId_votacao_5(int id_votacao_5) {
 		this.id_votacao_5 = id_votacao_5;
 	}
 
+	public String getIp_votacao_5_dia() {
+		return ip_votacao_5_dia;
+	}
+
+	public void setIp_votacao_5_dia(String ip_votacao_5_dia) {
+		this.ip_votacao_5_dia = ip_votacao_5_dia;
+	}
+
+	
 	public String getGrupod_1() {
 		return grupod_1;
 	}

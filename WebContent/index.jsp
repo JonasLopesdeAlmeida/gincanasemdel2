@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Gincana Virtual Movimento e Resgate</title>
-  <link rel="icon" href="imgs/favicon.ico">
+  <link rel="icon" href="imgs/logo-pref.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
@@ -25,8 +25,8 @@
 <body id="topo" class="slowpage">
 	<nav class="navbar navbar-expand-md navbar-light sticky-top bg-white">
 	<div class="container">
-		<a class="navbar-brand text-primary" href="index.html"> <img
-			src="imgs/logo.png" width="190" class="d-inline-block align-top"
+		<a class="navbar-brand text-primary" href="index.jsp"> <img
+			src="imgs/logo-pref.png" width="190" class="d-inline-block align-top"
 			alt=""></a>
 		<button class="navbar-toggler navbar-toggler-right border-0"
 			type="button" data-toggle="collapse" data-target="#navbar4">
@@ -107,7 +107,7 @@
 		</div>
 	</div>
 	<div class="py-5 text-white"
-		style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(imgs/MARCA_Prancheta_1_cópia.png); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;"
+		style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(imgs/MARCA_Prancheta.png); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;"
 		id="jogos">
 		<div class="container">
 			<div class="row">
@@ -123,7 +123,7 @@
 							<h3 class="text-danger font-weight-bold">Campeonato de
 								votação</h3>
 							<p class="my-3 lead">Participe votando na sua equipe
-								predilete e ajude a aumentar as chances de serem vencedores.</p>
+								predileta e ajude a aumentar as chances de serem vencedores.</p>
 							<a class="btn btn-success btn-lg" href="equipes.jsp">Vote na
 								sua equipe favorita</a>
 						</div>

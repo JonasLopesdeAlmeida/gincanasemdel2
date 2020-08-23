@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 <title>Gincana Virtual Movimento e Resgate</title>
-<link rel="icon" href="imgs/favicon.ico">
+<link rel="icon" href="imgs/logo-pref.png">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 	type="text/css">
@@ -29,8 +29,8 @@
 
 	<nav class="navbar navbar-expand-md navbar-light">
 	<div class="container">
-		<a class="navbar-brand text-primary" href="index.html"> <img
-			src="imgs/logo.png" width="190" class="d-inline-block align-top"
+		<a class="navbar-brand text-primary" href="index.jsp"> <img
+			src="imgs/logo-pref.png" width="190" class="d-inline-block align-top"
 			alt=""></a>
 		<button class="navbar-toggler navbar-toggler-right border-0"
 			type="button" data-toggle="collapse" data-target="#navbar4">
@@ -39,7 +39,7 @@
 		<div class="collapse navbar-collapse" id="navbar4">
 			<ul
 				class="navbar-nav ml-auto text-uppercase font-weight-bold negrita fonte_menu">
-				<li class="nav-item"><a class="nav-link" href="index.jsp">INÍCIO</a>
+				<li class="nav-item"><a class="nav-link" href="index.jsp">HOME</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="equipesdecimoprimeirodia.jsp">VOTAR</a>
 				</li>

@@ -23,12 +23,13 @@ public class VideoDao extends Conecta{
 
 		{
            
-			stm = con.prepareStatement("insert into video(masc_bacanga, fem_bacanga, masc_divineia, fem_divineia, data_votacao)values(?,?,?,?,?)");
+			stm = con.prepareStatement("insert into video(masc_bacanga, fem_bacanga, masc_divineia, fem_divineia, data_votacao, ip_votacao_video)values(?,?,?,?,?,?)");
 			stm.setString(1,vd.getMasc_bacanga());
 			stm.setString(2,vd.getFem_bacanga()); 
 			stm.setString(3,vd.getMasc_divineia()); 
 			stm.setString(4,vd.getFem_divineia()); 
 			stm.setString(5,vd.getData_votacao()); 
+			stm.setString(6, vd.getIp_votacao_video());
 			stm.execute();
 			stm.close();                             
 			con.close();

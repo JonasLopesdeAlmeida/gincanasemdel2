@@ -22,7 +22,7 @@ public class VotacaoTerceiroDiaDao extends Conecta  {
 
 		{
              //grupod,grupoe,grupof,grupog,grupoh,grupoi,
-			stm = con.prepareStatement("insert into votacao_3_dia(grupog_1,grupog_2, grupoh_1,grupoh_2, grupoi_1,grupoi_2 ,data_votacao_3_dia )values(?,?,?,?,?,?,?)");
+			stm = con.prepareStatement("insert into votacao_3_dia(grupog_1,grupog_2, grupoh_1,grupoh_2, grupoi_1,grupoi_2 ,data_votacao_3_dia, ip_votacao_3_dia )values(?,?,?,?,?,?,?,?)");
 			stm.setString(1,v3.getGrupog_1());
 			stm.setString(2,v3.getGrupog_2()); 
 			stm.setString(3,v3.getGrupoh_1()); 
@@ -30,6 +30,7 @@ public class VotacaoTerceiroDiaDao extends Conecta  {
 			stm.setString(5,v3.getGrupoi_1()); 
 			stm.setString(6,v3.getGrupoi_2()); 
 			stm.setString(7,v3.getData_votacao_3_dia()); 
+			stm.setString(8, v3.getIp_votacao_3_dia());
 			stm.execute();
 			stm.close();                             
 			con.close();

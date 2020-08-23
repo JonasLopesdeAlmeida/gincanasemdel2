@@ -7,7 +7,7 @@ public class Votacao implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id_votacao;
-	private String grupoa_1,grupoa_2, grupob_1,grupob_2, grupoc_1,grupoc_2 ,data_votacao;
+	private String grupoa_1, grupoa_2, grupob_1,grupob_2, grupoc_1,grupoc_2 ,data_votacao, ip_votacao;
 	
 	//, grupod, grupoe, grupof, grupog, grupoh, grupoi,
 
@@ -17,7 +17,7 @@ public class Votacao implements Serializable {
 	}
 
 	public Votacao(int id_votacao, String grupoa_1, String grupoa_2, String grupob_1, String grupob_2, String grupoc_1,
-			String grupoc_2, String data_votacao) {
+			String grupoc_2, String data_votacao, String ip_votacao) {
 		super();
 		this.id_votacao = id_votacao;
 		this.grupoa_1 = grupoa_1;
@@ -27,6 +27,7 @@ public class Votacao implements Serializable {
 		this.grupoc_1 = grupoc_1;
 		this.grupoc_2 = grupoc_2;
 		this.data_votacao = data_votacao;
+		this.ip_votacao = ip_votacao;
 	}
 
 	public int getId_votacao() {
@@ -63,6 +64,14 @@ public class Votacao implements Serializable {
 
 	public String getGrupob_2() {
 		return grupob_2;
+	}
+
+	public String getIp_votacao() {
+		return ip_votacao;
+	}
+
+	public void setIp_votacao(String ip_votacao) {
+		this.ip_votacao = ip_votacao;
 	}
 
 	public void setGrupob_2(String grupob_2) {

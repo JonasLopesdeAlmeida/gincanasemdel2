@@ -22,12 +22,13 @@ public class VotacaoDecimoDiaDao extends Conecta  {
 
 		{
 	         //grupod,grupoe,grupof,grupog,grupoh,grupoi,
-			stm = con.prepareStatement("insert into votacao_10_dia(grupoa_1,grupoa_2, grupob_1,grupob_2,data_votacao_8_dia)values(?,?,?,?,?)");
+			stm = con.prepareStatement("insert into votacao_10_dia(grupoa_1,grupoa_2, grupob_1,grupob_2,data_votacao_10_dia, ip_votacao_10_dia)values(?,?,?,?,?,?)");
 			stm.setString(1,v10.getGrupoa_1());
 			stm.setString(2,v10.getGrupoa_2()); 
 			stm.setString(3,v10.getGrupob_1()); 
 			stm.setString(4,v10.getGrupob_2()); 
 			stm.setString(5,v10.getData_votacao_10_dia()); 
+			stm.setString(6, v10.getIp_votacao_10_dia());
 			stm.execute();
 			stm.close();                             
 			con.close();

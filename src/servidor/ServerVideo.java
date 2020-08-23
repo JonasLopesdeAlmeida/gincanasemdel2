@@ -1,6 +1,7 @@
 package servidor;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -85,7 +86,8 @@ public class ServerVideo extends HttpServlet {
    		String masc_divineia = request.getParameter("masc_divineia");
    		String fem_divineia = request.getParameter("fem_divineia");
    		String data_votacao = request.getParameter("data_votacao");
-   		//System.out.println(data_votacao);
+   		String ip_votacao_video = InetAddress.getLocalHost().getHostAddress();
+        System.out.println(ip_votacao_video);
    		
    		
    		Video vi = new Video();
@@ -95,13 +97,14 @@ public class ServerVideo extends HttpServlet {
    		vi.setMasc_divineia(masc_divineia);
    		vi.setFem_divineia(fem_divineia);
    		vi.setData_votacao(data_votacao);
+   		vi.setIp_votacao_video(ip_votacao_video);
 
    		vd.open();
    		if(vd != null)
    		{
   			vd.gravar(vi);
                 
-  			response.sendRedirect("sucessovotacaoequipes.jsp");
+  			response.sendRedirect("sucessovotacaoembaixadinhaprimeirodia.jsp");
   			//response.sendRedirect("sucessoescola.jsp?instituicao=" + instituicao);
    		}
    		 

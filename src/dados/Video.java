@@ -7,7 +7,7 @@ public class Video implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int id_video;
-	private String masc_bacanga, fem_bacanga, masc_divineia, fem_divineia, data_votacao;
+	private String masc_bacanga, fem_bacanga, masc_divineia, fem_divineia, data_votacao, ip_votacao_video;
 	
 	
 	public Video() {
@@ -15,14 +15,15 @@ public class Video implements Serializable {
 		
 	}
 	
-	public Video(int id_video, String masc_bacanga, String fem_bacanga, String masc_divineia, String fem_divineia, String data_votacao) {
+	public Video(int id_video, String masc_bacanga, String fem_bacanga, String masc_divineia, String fem_divineia, String data_votacao, String ip_votacao_video) {
 		super();
 		this.id_video = id_video;
 		this.masc_bacanga = masc_bacanga;
 		this.fem_bacanga = fem_bacanga;
 		this.masc_divineia = masc_divineia;
 		this.fem_divineia = fem_divineia;
-		this.setData_votacao(data_votacao);
+		this.data_votacao = data_votacao;
+		this.ip_votacao_video = ip_votacao_video;
 	}
 
 	public int getId_video() {
@@ -72,6 +73,15 @@ public class Video implements Serializable {
 	public void setData_votacao(String data_votacao) {
 		this.data_votacao = data_votacao;
 	}
+
+	public String getIp_votacao_video() {
+		return ip_votacao_video;
+	}
+
+	public void setIp_votacao_video(String ip_votacao_video) {
+		this.ip_votacao_video = ip_votacao_video;
+	}
+	
 	
 
 	

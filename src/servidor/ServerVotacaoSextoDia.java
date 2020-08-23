@@ -1,6 +1,7 @@
 package servidor;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -87,7 +88,8 @@ public class ServerVotacaoSextoDia extends HttpServlet {
    		String grupoi_1 = request.getParameter("grupoi_1");
   		String grupoi_2 = request.getParameter("grupoi_2");
    		String data_votacao_6_dia = request.getParameter("data_votacao_6_dia");
-   		//System.out.println(data_votacao);
+   		String ip_votacao_6_dia = InetAddress.getLocalHost().getHostAddress();
+        System.out.println(ip_votacao_6_dia);
    		
    		
    		VotacaoSextoDia v6 = new VotacaoSextoDia();
@@ -99,6 +101,7 @@ public class ServerVotacaoSextoDia extends HttpServlet {
    		v6.setGrupoi_1(grupoi_1);
   		v6.setGrupoi_2(grupoi_2);
    		v6.setData_votacao_6_dia(data_votacao_6_dia);
+   		v6.setIp_votacao_6_dia(ip_votacao_6_dia);
 
    		vd6.open();
    		if(vd6 != null)

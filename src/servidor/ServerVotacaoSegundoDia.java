@@ -1,6 +1,7 @@
 package servidor;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -78,7 +79,7 @@ public class ServerVotacaoSegundoDia extends HttpServlet {
    	private void doService(HttpServletResponse response, HttpServletRequest request) throws Exception {
    		// TODO Auto-generated method stub
    		response.setContentType("text/html");
-
+   	
    		String grupod_1 = request.getParameter("grupod_1");
    		String grupod_2 = request.getParameter("grupod_2");
    		String grupoe_1 = request.getParameter("grupoe_1");
@@ -86,6 +87,8 @@ public class ServerVotacaoSegundoDia extends HttpServlet {
    		String grupof_1 = request.getParameter("grupof_1");
   		String grupof_2 = request.getParameter("grupof_2");
    		String data_votacao_2_dia = request.getParameter("data_votacao_2_dia");
+   		String ip_votacao_2_dia = InetAddress.getLocalHost().getHostAddress();
+        System.out.println(ip_votacao_2_dia);
    		//System.out.println(data_votacao);
    		
    		
@@ -98,6 +101,7 @@ public class ServerVotacaoSegundoDia extends HttpServlet {
    		v2.setGrupof_1(grupof_1);
   		v2.setGrupof_2(grupof_2);
    		v2.setData_votacao_2_dia(data_votacao_2_dia);
+   		v2.setIp_votacao_2_dia(ip_votacao_2_dia);
 
    		vd2.open();
    		if(vd2 != null)
