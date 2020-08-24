@@ -47,7 +47,7 @@
 	</nav>
 	<div
 		class="py-5 text-center text-white h-100 align-items-center d-flex"
-		style="background-image: url(&quot;imgs/LOGO2.png&quot;); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;"
+		style="background-image: url(&quot;imgs/logo-pref-2.png&quot;); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;"
 		id="banner">
 		<div class="container py-5">
 			<div class="row py-5">

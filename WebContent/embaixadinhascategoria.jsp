@@ -86,11 +86,11 @@
 										src="http://i1.ytimg.com/vi/dVXm0q9Fcm8/mqdefault.jpg"
 										alt="Imagem de capa do card">
 									<div class="card-body text-center">
-										<h5 class="card-title">Equipe: Bacanga</h5>
+										<h5 class="card-title">Equipe: </h5>
 										<i href="" class="btn btn-dark btn-sm"
 											data-toggle="modal" data-target="#videoModal"
 											data-video="https://www.youtube.com/embed/dVXm0q9Fcm8">
-											<i class="fa fa-fw fa-play"></i>&nbsp;Assistir
+											<i class="fa fa-fw fa-play autoplay"></i>&nbsp;Assistir
 										</i>
 
 									</div>
@@ -118,8 +118,8 @@
 
 											<div class="progress-bar" role="progressbar"
 												aria-valuemin="0" aria-valuemax="100"><%=rs.getString("contaBacanga")%></div>
-										</div>
-									</div>
+										    </div>
+									        </div>
                                      
 
 									<%
@@ -167,15 +167,22 @@
 											</div>
 											<div class="modal-footer">
 											 
-											 <div> 
+											 <!-- INPUT -->
+											 
+											<!-- <div> 
 											 	<input class="form-check-input" type="radio"
 											name="masc_bacanga" value="BACANGA" required="required">
-											 </div>
+											 </div> --> 
 											
-												<button  type="submit"
+											
+											        <!-- BOTÃO CURTIR -->
+												
+												<h3 class="font-weight-bold text-danger">Indisponível</h3>
+												
+												<!--  <button  type="submit"
 									                    class="btn btn-primary btn-lg">
 									                    <i class="fa fa-thumbs-up"></i>&nbsp;Curtir
-								                </button>
+								                </button>-->
 												
 											
 												<button type="button" class="btn btn-secondary"
@@ -197,59 +204,129 @@
                      </div>
 
 						<div class="col-md-5 p-3">
-							<div class="card">
-								<img class="card-img-top"
-									src="http://i1.ytimg.com/vi/dVXm0q9Fcm8/mqdefault.jpg"
-									alt="Imagem de capa do card">
-								<div class="card-body text-center">
-									<h5 class="card-title">Equipe: Divineia</h5>
-									<a href="" class="btn btn-dark btn-sm" data-toggle="modal"
-										data-target="#videoModal2"
-										data-video="https://www.youtube.com/embed/dVXm0q9Fcm8"><i
-										class="fa fa-fw fa-play" onclick='atualiza();'></i>&nbsp;Assistir</a>
-								</div>
-								<div class="card-footer">
-									<div class="progress">
-										<div class="progress-bar progress-bar-striped bg-warning"
-											role="progressbar" style="width: 75%" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100">75%</div>
+							<form method="post" action="ServerVideo">
+								<div class="card">
+									<img class="card-img-top"
+										src="http://i1.ytimg.com/vi/dVXm0q9Fcm8/mqdefault.jpg"
+										alt="Imagem de capa do card">
+									<div class="card-body text-center">
+										<h5 class="card-title">Equipe: </h5>
+										<i href="" class="btn btn-dark btn-sm"
+											data-toggle="modal" data-target="#videoModal"
+											data-video="https://www.youtube.com/embed/dVXm0q9Fcm8">
+											<i class="fa fa-fw fa-play"></i>&nbsp;Assistir
+										</i>
+
 									</div>
+									<div class="card-footer">
+										<div class="progress">
+											<%
+												PreparedStatement ps1 = null;
+												Connection con1 = null;
+												ResultSet rs1 = null;
+
+												{
+
+													try {
+														Class.forName("org.postgresql.Driver").newInstance();
+														con = DriverManager.getConnection("jdbc:postgresql://localhost/bdgincanasemdel", "postgres",
+																"252107");
+														ps = con.prepareStatement(
+																"select count(*) AS contaDivineia from video where masc_divineia = 'DIVINEIA'");
+														rs = ps.executeQuery();
+														rs.next();
+														rs = ps.executeQuery();
+
+														while (rs.next()) {
+											%>
+
+											<div class="progress-bar" role="progressbar"
+												aria-valuemin="0" aria-valuemax="100"><%=rs.getString("contaDivineia")%></div>
+										    </div>
+									        </div>
+                                     
+
+									<%
+										}
+
+											} catch (ClassNotFoundException erroClass) /*erro caso ele não localize a classe o driver*/
+											{
+												out.println("Classe Driver JDBC não foi localizado, erro " + erroClass);
+											}
+
+											catch (SQLException erroSQL) /* erro no banco de dados */
+											{
+												out.println("Erro de conexão com o banco de dados , erro" + erroSQL);
+											} finally {
+												if (rs != null)
+													rs.close();
+												if (ps != null)
+													ps.close();
+												if (con != null)
+													con.close();
+											}
+										}
+									%>
+									
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<!-- Modal -->
-				<div class="modal fade" id="videoModal2" tabindex="-1" role="dialog"
-					data-backdrop="static">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5>Vídeo</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Fechar">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body bg-dark p-0">
-								<div class="embed-responsive embed-responsive-16by9">
-									<!--<iframe class="embed-responsive-item" allowfullscreen></iframe>-->
-									<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
-										frameborder="0" allowfullscreen></iframe>
+								<div class="modal fade" id="videoModal" tabindex="-1"
+									role="dialog" data-backdrop="static">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5>Vídeo</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Fechar">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body bg-dark p-0">
+												<div class="embed-responsive embed-responsive-16by9">
+													<iframe class="embed-responsive-item" allowfullscreen></iframe>
+													<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
+														frameborder="0" allowfullscreen></iframe>
+												</div>
+											</div>
+											<div class="modal-footer">
+											 
+											 <!-- INPUT -->
+											 
+											<!-- <div> 
+											 	<input class="form-check-input" type="radio"
+											name="masc_bacanga" value="BACANGA" required="required">
+											 </div> --> 
+											
+											
+											        <!-- BOTÃO CURTIR -->
+												
+												<h3 class="font-weight-bold text-danger">Indisponível</h3>
+												
+												<!--  <button  type="submit"
+									                    class="btn btn-primary btn-lg">
+									                    <i class="fa fa-thumbs-up"></i>&nbsp;Curtir
+								                </button>-->
+												
+											
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal" onclick='atualiza();'>Fechar</button>
+													
+													
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="modal-footer">
-								<button id="botaoCurtir2" type="button"
-									class="btn btn-primary btn-lg">
-									<i class="fa fa-thumbs-up"></i>&nbsp;Curtir
-								</button>
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal" onclick='atualiza();'>Fechar</button>
-							</div>
+							</form>
+							
+							
 						</div>
-					</div>
+
+				
 				</div>
+				
+				</div>
+				
 				<div class="col-md-6 p-3">
 					<div class="row">
 						<div class="col-md-12">
@@ -265,51 +342,119 @@
 									src="http://i1.ytimg.com/vi/dVXm0q9Fcm8/mqdefault.jpg"
 									alt="Imagem de capa do card">
 								<div class="card-body text-center">
-									<h5 class="card-title">Equipe: Bacanga</h5>
-									<a href="" class="btn btn-dark btn-sm" data-toggle="modal"
-										data-target="#videoModal3"
-										data-video="https://www.youtube.com/embed/dVXm0q9Fcm8"><i
-										class="fa fa-fw fa-play" onclick='atualiza();'></i>&nbsp;Assistir</a>
+									<h5 class="card-title">Equipe:</h5>
+									<i href="" class="btn btn-dark btn-sm"
+											data-toggle="modal" data-target="#videoModal"
+											data-video="https://www.youtube.com/embed/dVXm0q9Fcm8">
+											<i class="fa fa-fw fa-play"></i>&nbsp;Assistir
+										</i>
 								</div>
 								<div class="card-footer">
 									<div class="progress">
-										<div class="progress-bar progress-bar-striped bg-warning"
-											role="progressbar" style="width: 75%" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100">75%</div>
-									</div>
+											
+											<%
+												PreparedStatement ps2 = null;
+												Connection con2 = null;
+												ResultSet rs2 = null;
+
+												{
+
+													try {
+														Class.forName("org.postgresql.Driver").newInstance();
+														con = DriverManager.getConnection("jdbc:postgresql://localhost/bdgincanasemdel", "postgres",
+																"252107");
+														ps = con.prepareStatement(
+																"select count(*) AS contaBacanga2 from video where fem_bacanga = 'BACANGA'");
+														rs = ps.executeQuery();
+														rs.next();
+														rs = ps.executeQuery();
+
+														while (rs.next()) {
+											%>
+
+											<div class="progress-bar" role="progressbar"
+												aria-valuemin="0" aria-valuemax="100"><%=rs.getString("contaBacanga2")%></div>
+										    </div>
+									        </div>
+                                     
+
+									<%
+										}
+
+											} catch (ClassNotFoundException erroClass) /*erro caso ele não localize a classe o driver*/
+											{
+												out.println("Classe Driver JDBC não foi localizado, erro " + erroClass);
+											}
+
+											catch (SQLException erroSQL) /* erro no banco de dados */
+											{
+												out.println("Erro de conexão com o banco de dados , erro" + erroSQL);
+											} finally {
+												if (rs != null)
+													rs.close();
+												if (ps != null)
+													ps.close();
+												if (con != null)
+													con.close();
+											}
+										}
+									%>
+									
 								</div>
-							</div>
-						</div>
+						
 						<!-- Modal -->
-						<div class="modal fade" id="videoModal3" tabindex="-1"
-							role="dialog" data-backdrop="static">
-							<div class="modal-dialog modal-dialog-centered" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5>Vídeo</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Fechar">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body bg-dark p-0">
-										<div class="embed-responsive embed-responsive-16by9">
-											<!--<iframe class="embed-responsive-item" allowfullscreen></iframe>-->
-											<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
-												frameborder="0" allowfullscreen></iframe>
+								<div class="modal fade" id="videoModal" tabindex="-1"
+									role="dialog" data-backdrop="static">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5>Vídeo</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Fechar">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body bg-dark p-0">
+												<div class="embed-responsive embed-responsive-16by9">
+													<iframe class="embed-responsive-item" allowfullscreen></iframe>
+													<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
+														frameborder="0" allowfullscreen></iframe>
+												</div>
+											</div>
+											<div class="modal-footer">
+											 
+											 <!-- INPUT -->
+											 
+											<!-- <div> 
+											 	<input class="form-check-input" type="radio"
+											name="masc_bacanga" value="BACANGA" required="required">
+											 </div> --> 
+											
+											
+											        <!-- BOTÃO CURTIR -->
+												
+												<h3 class="font-weight-bold text-danger">Indisponível</h3>
+												
+												<!--  <button  type="submit"
+									                    class="btn btn-primary btn-lg">
+									                    <i class="fa fa-thumbs-up"></i>&nbsp;Curtir
+								                </button>-->
+												
+											
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal" onclick='atualiza();'>Fechar</button>
+													
+													
+											</div>
 										</div>
 									</div>
-									<div class="modal-footer">
-										<button id="botaoCurtir3" type="button"
-											class="btn btn-primary btn-lg">
-											<i class="fa fa-thumbs-up"></i>&nbsp;Curtir
-										</button>
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal" onclick='atualiza();'>Fechar</button>
-									</div>
 								</div>
-							</div>
+							</form>
+							
+							
 						</div>
+
+
 						<div class="col-md-2 center-v">
                      <img class="img-fluid" src="imgs/x_disputas.png">
                      </div>
@@ -319,62 +464,128 @@
 									src="http://i1.ytimg.com/vi/dVXm0q9Fcm8/mqdefault.jpg"
 									alt="Imagem de capa do card">
 								<div class="card-body text-center">
-									<h5 class="card-title">Equipe: Divineia</h5>
-									<a href="" class="btn btn-dark btn-sm" data-toggle="modal"
-										data-target="#videoModal4"
-										data-video="https://www.youtube.com/embed/dVXm0q9Fcm8"><i
-										class="fa fa-fw fa-play" onclick='atualiza();'></i>&nbsp;Assistir</a>
+									<h5 class="card-title">Equipe: </h5>
+									<i href="" class="btn btn-dark btn-sm"
+											data-toggle="modal" data-target="#videoModal"
+											data-video="https://www.youtube.com/embed/dVXm0q9Fcm8">
+											<i class="fa fa-fw fa-play"></i>&nbsp;Assistir
+										</i>
 								</div>
 								<div class="card-footer">
 									<div class="progress">
-										<div class="progress-bar progress-bar-striped bg-warning"
-											role="progressbar" style="width: 75%" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100">75%</div>
-									</div>
+											
+											<%
+												PreparedStatement ps3 = null;
+												Connection con3 = null;
+												ResultSet rs3 = null;
+
+												{
+
+													try {
+														Class.forName("org.postgresql.Driver").newInstance();
+														con = DriverManager.getConnection("jdbc:postgresql://localhost/bdgincanasemdel", "postgres",
+																"252107");
+														ps = con.prepareStatement(
+																"select count(*) AS contaDivineia2 from video where fem_divineia = 'DIVINEIA'");
+														rs = ps.executeQuery();
+														rs.next();
+														rs = ps.executeQuery();
+
+														while (rs.next()) {
+											%>
+
+											<div class="progress-bar" role="progressbar"
+												aria-valuemin="0" aria-valuemax="100"><%=rs.getString("contaDivineia2")%></div>
+										    </div>
+									        </div>
+                                     
+
+									<%
+										}
+
+											} catch (ClassNotFoundException erroClass) /*erro caso ele não localize a classe o driver*/
+											{
+												out.println("Classe Driver JDBC não foi localizado, erro " + erroClass);
+											}
+
+											catch (SQLException erroSQL) /* erro no banco de dados */
+											{
+												out.println("Erro de conexão com o banco de dados , erro" + erroSQL);
+											} finally {
+												if (rs != null)
+													rs.close();
+												if (ps != null)
+													ps.close();
+												if (con != null)
+													con.close();
+											}
+										}
+									%>
+									
 								</div>
-							</div>
 
 							<!-- Modal -->
-							<div class="modal fade" id="videoModal4" tabindex="-1"
-								role="dialog" data-backdrop="static">
-								<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5>Vídeo</h5>
-											<button type="button" class="close" data-dismiss="modal"
-												aria-label="Fechar">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body bg-dark p-0">
-											<div class="embed-responsive embed-responsive-16by9">
-												<!--<iframe class="embed-responsive-item" allowfullscreen></iframe>-->
-												<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
-													frameborder="0" allowfullscreen></iframe>
+								<div class="modal fade" id="videoModal" tabindex="-1"
+									role="dialog" data-backdrop="static">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5>Vídeo</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Fechar">
+													<span aria-hidden="true">&times;</span>
+												</button>
 											</div>
-										</div>
-										<div class="modal-footer">
-											<button id="botaoCurtir4" type="button"
-												class="btn btn-primary btn-lg">
-												<i class="fa fa-thumbs-up"></i>&nbsp;Curtir
-											</button>
-											<button type="button" class="btn btn-secondary"
-												data-dismiss="modal" onclick='atualiza();'>Fechar</button>
+											<div class="modal-body bg-dark p-0">
+												<div class="embed-responsive embed-responsive-16by9">
+													<iframe class="embed-responsive-item" allowfullscreen></iframe>
+													<iframe src="https://www.youtube.com/embed/dVXm0q9Fcm8"
+														frameborder="0" allowfullscreen></iframe>
+												</div>
+											</div>
+											<div class="modal-footer">
+											 
+											 <!-- INPUT -->
+											 
+											<!-- <div> 
+											 	<input class="form-check-input" type="radio"
+											name="masc_bacanga" value="BACANGA" required="required">
+											 </div> --> 
+											
+											
+											        <!-- BOTÃO CURTIR -->
+												
+												<h3 class="font-weight-bold text-danger">Indisponível</h3>
+												
+												<!--  <button  type="submit"
+									                    class="btn btn-primary btn-lg">
+									                    <i class="fa fa-thumbs-up"></i>&nbsp;Curtir
+								                </button>-->
+												
+											
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal" onclick='atualiza();'>Fechar</button>
+													
+													
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-
+							</form>
+							
+							
 						</div>
-
-
-
-					</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+						
+						</div>
+						
+						</div>
+						
+						</div>
+						
+						</div>
+						</div>
+						</div>
+						
 	<div class="py-5 text-white bg-danger" id="regras">
 		<div class="container">
 			<div class="row">

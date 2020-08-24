@@ -1,7 +1,6 @@
 package servidor;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -87,7 +86,15 @@ public class ServerVotacaoQuartoDia extends HttpServlet {
    		String grupoc_1 = request.getParameter("grupoc_1");
   		String grupoc_2 = request.getParameter("grupoc_2");
    		String data_votacao_4_dia = request.getParameter("data_votacao_4_dia");
-   		String ip_votacao_4_dia = InetAddress.getLocalHost().getHostAddress();
+   		
+   		String ip_votacao_4_dia = request.getHeader("x-forwarded-for");
+   		if (ip_votacao_4_dia == null) {
+   			ip_votacao_4_dia = request.getHeader("X_FORWARDED_FOR");
+   		    if (ip_votacao_4_dia == null){
+   		    	ip_votacao_4_dia = request.getRemoteAddr();
+   		    }
+   		}
+   		
         System.out.println(ip_votacao_4_dia);
    		
    		VotacaoQuartoDia v4 = new VotacaoQuartoDia();

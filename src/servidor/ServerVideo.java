@@ -86,8 +86,19 @@ public class ServerVideo extends HttpServlet {
    		String masc_divineia = request.getParameter("masc_divineia");
    		String fem_divineia = request.getParameter("fem_divineia");
    		String data_votacao = request.getParameter("data_votacao");
-   		String ip_votacao_video = InetAddress.getLocalHost().getHostAddress();
+   		
+   		String ip_votacao_video = request.getHeader("x-forwarded-for");
+   		//pegando ip reverso mesmo se estiver por tras de proxy.
+   		if (ip_votacao_video == null) {
+   			ip_votacao_video = request.getHeader("X_FORWARDED_FOR");
+   		    if (ip_votacao_video == null){
+   		    	ip_votacao_video = request.getRemoteAddr();
+   		    }
+   		}
+   		
         System.out.println(ip_votacao_video);
+   		
+   		
    		
    		
    		Video vi = new Video();

@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="css/stylo.css">
 </head>
 
+
+
 <body id="topo" class="slowpage">
 
 	<%
@@ -32,6 +34,9 @@
 
 		DateFormat formato = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy HH:mm");
 		String dataStr = formato.format(data);
+	
+	
+	
 	%>
 	<nav class="navbar navbar-expand-md navbar-light">
 	<div class="container">
@@ -51,7 +56,7 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="#regras">Regras</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="equipessegundodiae0.jsp">2ª dia de votação</a>
+				<li class="nav-item"><a class="nav-link" href="equipessegundodia.jsp">2ª dia de votação</a>
 				</li>
 			</ul>
 		</div>
@@ -141,6 +146,7 @@
 								</div>
 								<div class="col-md-5 p-3 text-center">
 									<input type="hidden" name="data_votacao" value="<%=dataStr%>">
+							
 
 									<input class="form-check-input" type="radio" name="grupoa_1"
 										value="AURORA (Eduardo Verde)">AURORA (Eduardo Verde)<br>

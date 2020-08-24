@@ -169,10 +169,17 @@
 							</div>
 						</div>
 
-
+                       
+                       
+                       <!--BOTÃO DE VOTAR  -->
+					
 						<div class="form-group text-center">
-							<button class="btn btn-primary">Votar</button>
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
 						</div>
+						
 
 						<%
 							}
@@ -279,10 +286,16 @@
 								</div>
 							</div>
 
-
-							<div class="form-group text-center">
-								<button class="btn btn-primary">Votar</button>
-							</div>
+                       
+                       <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
+						
 
 							<%
 								}
@@ -393,10 +406,15 @@
 									</div>
 								</div>
 
-
-								<div class="form-group text-center">
-									<button class="btn btn-primary">Votar</button>
-								</div>
+                        
+                        <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
 
 								<%
 									}
@@ -475,7 +493,7 @@
 
 
 												<input class="form-check-input" type="radio" name="grupoe_2"
-													value="PQ DO BOM MENINO(Luís Augusto – Bodinho)">PQ DO BOM MENINO (Luís Augusto – Bodinho)<br>
+													value="PQ DO BOM MENINO(Luís Augusto Bodinho)">PQ DO BOM MENINO (Luís Augusto Bodinho)<br>
 												<div class="progress">
 													<%
 													{
@@ -485,7 +503,7 @@
 															con = DriverManager.getConnection("jdbc:postgresql://localhost/bdgincanasemdel", "postgres",
 																	"252107");
 															ps = con.prepareStatement(
-																	"select count(*) AS contaParque from votacao_5_dia where grupoe_2 = 'PQ DO BOM MENINO(Luís Augusto – Bodinho)'");
+																	"select count(*) AS contaParque from votacao_5_dia where grupoe_2 = 'PQ DO BOM MENINO(Luís Augusto Bodinho)'");
 															rs = ps.executeQuery();
 															rs.next();
 															rs = ps.executeQuery();
@@ -501,9 +519,15 @@
 								</div>
 
 
-								<div class="form-group text-center">
-									<button class="btn btn-primary">Votar</button>
-								</div>
+								<!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
+						
 
 								<%
 									}
@@ -616,9 +640,15 @@
 										</div>
 
 
-										<div class="form-group text-center">
-											<button class="btn btn-primary">Votar</button>
-										</div>
+										<!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
+						
 
 										<%
 											}
@@ -726,10 +756,18 @@
 												</div>
 											</div>
 
-
-											<div class="form-group text-center">
-												<button class="btn btn-primary">Votar</button>
-											</div>
+                          
+                          
+                          <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
+											
+											
 											<%
 												}
 

@@ -1,7 +1,6 @@
 package servidor;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -88,7 +87,16 @@ public class ServerVotacaoNonoDia extends HttpServlet {
    		String grupoi_1 = request.getParameter("grupoi_1");
   		String grupoi_2 = request.getParameter("grupoi_2");
    		String data_votacao_9_dia = request.getParameter("data_votacao_9_dia");
-   		String ip_votacao_9_dia = InetAddress.getLocalHost().getHostAddress();
+   		
+   		String ip_votacao_9_dia = request.getHeader("x-forwarded-for");
+   		//pegando ip reverso mesmo se estiver por tras de proxy.
+   		if (ip_votacao_9_dia == null) {
+   			ip_votacao_9_dia = request.getHeader("X_FORWARDED_FOR");
+   		    if (ip_votacao_9_dia == null){
+   		    	ip_votacao_9_dia = request.getRemoteAddr();
+   		    }
+   		}
+   		
         System.out.println(ip_votacao_9_dia);
    		
    		

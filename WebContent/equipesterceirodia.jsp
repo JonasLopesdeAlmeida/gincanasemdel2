@@ -169,9 +169,13 @@
 							</div>
 						</div>
 
-
+                        <!--BOTÃO DE VOTAR  -->
+					
 						<div class="form-group text-center">
-							<button class="btn btn-primary">Votar</button>
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
 						</div>
 
 						<%
@@ -279,11 +283,17 @@
 								</div>
 							</div>
 
+                        
+                        <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
 
-							<div class="form-group text-center">
-								<button class="btn btn-primary">Votar</button>
-							</div>
-
+							
 							<%
 								}
 
@@ -393,10 +403,15 @@
 									</div>
 								</div>
 
-
-								<div class="form-group text-center">
-									<button class="btn btn-primary">Votar</button>
-								</div>
+                            
+                            <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
 
 								<%
 									}
@@ -500,10 +515,15 @@
 									</div>
 								</div>
 
-
-								<div class="form-group text-center">
-									<button class="btn btn-primary">Votar</button>
-								</div>
+                      
+                      <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
 
 								<%
 									}
@@ -615,10 +635,14 @@
 											</div>
 										</div>
 
-
-										<div class="form-group text-center">
-											<button class="btn btn-primary">Votar</button>
-										</div>
+                         <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						 </div>
 
 										<%
 											}
@@ -726,10 +750,17 @@
 												</div>
 											</div>
 
-
-											<div class="form-group text-center">
-												<button class="btn btn-primary">Votar</button>
-											</div>
+                    
+                      <!--BOTÃO DE VOTAR  -->
+					
+						<div class="form-group text-center">
+						  <h3 class="font-weight-bold text-danger">Indisponível</h3>
+						   <!-- <h3 class="font-weight-bold text-danger">Votação Encerrada</h3>-->
+						   <!--<button class="btn btn-primary">Votar</button>-->
+							
+						</div>
+											
+											
 											<%
 												}
 

@@ -1,7 +1,6 @@
 package servidor;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -83,8 +82,21 @@ public class ServerVotacao extends HttpServlet {
    		// TODO Auto-generated method stub
    		response.setContentType("text/html");
         
-   		String ip_votacao = InetAddress.getLocalHost().getHostAddress();
+   		
+
+   		String ip_votacao = request.getHeader("x-forwarded-for");
+   		//pegando ip reverso do clinte mesmo por tras de proxy.
+   		if (ip_votacao == null) {
+   			ip_votacao = request.getHeader("X_FORWARDED_FOR");
+   		    if (ip_votacao == null){
+   		    	ip_votacao = request.getRemoteAddr();
+   		    	
+   		    }
+   		}
+   	
         System.out.println(ip_votacao);
+        
+        
    		String grupoa_1 = request.getParameter("grupoa_1");
    		String grupoa_2 = request.getParameter("grupoa_2");
    		String grupob_1 = request.getParameter("grupob_1");
